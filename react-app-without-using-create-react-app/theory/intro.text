@@ -1,0 +1,132 @@
+How to create a React app without using create-react-app | a step by step guide
+
+
+
+What we will need
+
+1. Node: we will be working in a Node environment to install different packages, you 2. will need to have Node installed on your machine. Get it here
+3. Babel: as a compiler to convert our code into a backwards compatible version of 4. 4. JavaScript supported by older browsers or environments.
+5. Webpack: to bundle our code and files into one file.
+
+1. Create a node project
+
+    create a new folder, open it in VSCode and run npm init -y this will initialize a new node project and add the package.json file.
+
+            npm init -y
+
+
+2. Install Babel dependencies
+    Babel is a compiler that converts your modern JavaScript to run in older browsers.
+
+    Run the following command to install Babel dependencies (note that we install them as dev dependencies)
+    
+        npm install --save-dev @babel/core babel-loader @babel/cli @babel/preset-env @babel/preset-react
+
+    Understand packages we just installed
+
+    @babel/core: 
+    the core/main package that is needed to use Babel in our project.
+
+    babel-loader: 
+    enables us to use Babel together linked with webpack.
+
+    @babel/cli: 
+    (optional) allow us to use Babel to compile files directly from the command line. You don't necessarily need this to use React but you may need to use Babel in command line.
+
+    @babel/preset-env: 
+    used to convert ES6 JavaScript syntax into backward versions of JavaScript supported by older browsers.
+
+    @babel/preset-react: 
+    used to convert React syntax (jsx) into backward versions of JavaScript supported by older browsers.
+    
+
+3. Install Webpack dependencies
+    Webpack is a static module bundler for modern JavaScript applications. it takes different files and bundles them into a single JavaScript file. When building React apps you will end up with many files with different formats and you will need them bundled in a single JavaScript file that will be severed along our index.html to make our app run 
+
+    Run the following command to install Webpack dependencies (note that we install them as dev dependencies)
+
+        npm install --save-dev webpack webpack-cli webpack-dev-server
+
+    webpack: 
+    the actual package that enables us to use webpack in our project
+
+    webpack-cli: 
+    allow us to run webpack commands in the command line
+
+    webpack-dev-server: 
+    the webpack server that will act as our server in development if you are familiar with development servers live-server or nodemon it works the same
+
+
+4. Install HtmlWebpackPlugin
+    The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. as mentioned above when Webpack bundles all our files, it generate a single JavaScript (know as bundle) that will be served along our html file. HtmlWebpackPlugin handles creation these html files
+
+    run the following command to install HtmlWebpackPlugin
+
+        npm install --save-dev html-webpack-plugin
+
+
+5. Install React dependencies
+    React is a JavaScript library for creating user interfaces.
+    The react package contains only the functionality necessary to define React components. It is typically used together with a React renderer like react-dom for the web. an these are the main dependencies that allows as to actually use React
+
+    Run the follow command (note that we install them as main dependencies not dev)
+            
+            npm install react react-dom 
+
+
+    react: 
+    the actual react package that enables to use react in our project
+
+    react-dom: 
+    serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the react package
+
+
+6. Add React files
+    1. create a public folder and create an index.html file and add the following code.
+    2. create a src folder and create an App.js file and add the following code.
+    3. back in the root folder create an index.js which will be the entry of our app. add the following code.
+
+
+7. configure Babel
+    create a file named .babelrc and add the following code
+
+
+8. configure Webpack
+create a file named webpack.config.js and add the following code
+
+
+Let's break down this code
+
+we just created configurations that will be used by Webpack when bundling our react project
+
+the first two lines are quite straight-forward we are just importing HtmlWebpackPlugin that we installed earlier and path which is a Node build in package that handles file paths in a node project | learn more about path here
+
+entry: specifies the main file (the entry) of our application which will be the index.js file we created
+
+output: specifies where Webpack will put it's files after bundling and we specify the path and the file name of that Webpack bundle
+
+target: specifies where our app will run
+
+devServer: specifies our development server settings
+
+port: specifies the port our app will run on once started
+static: specifies the directory webpack will use to serve static files
+open: automatically open the browser after it had bundled our files
+hot: enables webpack Hot module replacement exchanges, adds, or removes modules while an application is running, without a full reload. to improve performance
+liveReload: automatically update the app as you make changes
+resolve: tells Webpack files to consider when building our app you can specifies files with several extensions
+
+modules: where we specify rules about how Webpack will handle different files when building our app
+
+
+9. add scripts in package.json
+in the package.json file in the scripts object scripts that will be used to run Webpack and start our application
+add scripts as mentioned below
+
+
+10. start your application
+run npm start to start the application
+
+
+refer to 
+    https://dev.to/ivadyhabimana/how-to-create-a-react-app-without-using-create-react-app-a-step-by-step-guide-30nl
