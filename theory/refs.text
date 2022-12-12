@@ -1,0 +1,62 @@
+Refs are a function provided by React to access the DOM element and the React element that you might have created on your own. They are used in cases where we want to change the value of a child component, without making use of props and all.
+
+
+We can create a Ref by the following three methods:
+
+    1. Using React.createRef()
+    2. Using useRef() hook
+    3. Using callback ref
+
+
+
+Method 1: Using React.createRef()
+
+Create a ref variable using React.createRef(). It was introduced in React 16.3.I version.
+Attach ref variable to the React element by using the ref attribute of the element.
+Syntax: 
+            const func = React.createRef();
+
+
+
+Method 2: Using useRef() hook
+
+We cannot use the ref attribute in the functional components because they don’t have the instances. To use the ref functionality in the functional component we can use the useRef hook.
+
+Create a ref variable using React.useRef()
+Attach ref variable to the React element by using the ref attribute of the element.
+The benefit of using useRef() over createRef() is that it’s handy for keeping any mutable value around similar to how you’d use instance fields in classes.
+The useRef() also takes an initial value.
+Syntax:
+        const func = useRef(null);
+
+
+
+Method 3: Using callback ref
+
+ This method was used before React 16.3 version. So if you are using React<16.3 you will use this method. In this method, we pass a function instead of passing a ref attribute that is created by createRef() or useRef(). The function receives the React element or HTML DOM element as an argument, which can be used.
+
+Syntax:
+
+        let textInput = null;
+        // Callback function that will set ref for input field
+        const setTextInputRef = (element) => {
+            textInputRef = element;
+        };
+
+
+Significance of Ref:
+
+    1. Achieve Interaction: 
+    We achieve interactions mainly with props and states in React. But Sometimes there are some interactions that cannot be achieved by props and states. At that time ref helps to achieve them.
+
+    2. Integration of third-party DOM libraries: 
+    When we want to integrate our React application with third-party Dom libraries React refs help us to do so.
+
+    3. Access to DOM: 
+    In React, a component cannot directly use the DOM. But with Ref we can do so. We can access any element directly and can also manipulate it. Some cases are the focus, text selection, etc.
+    
+    4. Triggering Animation: 
+    React refs help us in triggering imperative Animation in the DOM.
+    Provide Good Functionality: We can use the callback function with React ref.
+
+Note: We should only use Refs when it is really necessary. It should be avoided to do the things that can be done declaratively. 

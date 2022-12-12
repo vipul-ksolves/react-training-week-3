@@ -1,0 +1,7 @@
+What is the DOM?
+The DOM (Document Object Model) represents the web page as a tree structure. Any piece of HTML that we write is added as a node, to this tree.
+
+With JavaScript, we can access any of these nodes (HTML elements) and update their styles, attributes, and so on.
+
+
+Tree structure  https://www.freecodecamp.org/news/content/images/2022/03/Untitled-Diagram.drawio.svg
