@@ -1,18 +1,24 @@
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
+//redux
 import { getBlog } from "../../redux/features/blogSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
 
 const Details = () => {
   const param = useParams();
-  const blogDetail = useSelector((state) => state.blog.blogDetails);
-  console.log(blogDetail);
-  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getBlog(param.id));
-  // }, []);
+  const blogDetail = useAppSelector(
+    (state: RootState) => state.blog.blogDetails
+  );
+  console.log(blogDetail);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getBlog(param.id));
+  }, []);
 
   return (
     <>
@@ -101,13 +107,10 @@ const Details = () => {
                 </p>
                 <hr className="bg-muted my-4" />
                 <h3 className="visually-hidden">Tags</h3>
-                <Link
-                  href="#"
-                  className="btn btn-sm btn-outline-dark me-2 mb-3"
-                >
+                <Link to="#" className="btn btn-sm btn-outline-dark me-2 mb-3">
                   Design
                 </Link>
-                <Link href="#" className="btn btn-sm btn-outline-dark mb-3">
+                <Link to="#" className="btn btn-sm btn-outline-dark mb-3">
                   Minimalism
                 </Link>
               </div>

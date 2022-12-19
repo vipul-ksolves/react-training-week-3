@@ -15,7 +15,15 @@ type InitialStateValue = {
   allBlogs: Blog[];
   loading: boolean;
   error: string | undefined;
-  blogDetails: null | Blog;
+  blogDetails: {
+    id: any | undefined;
+    title: string;
+    image: string;
+    body: string;
+    publishedAt: string;
+    category: string;
+    isSponsored: boolean;
+  };
   filteredBlog: Blog[];
 };
 const initialStateValue: InitialStateValue = {
@@ -25,17 +33,28 @@ const initialStateValue: InitialStateValue = {
 
   error: "",
 
-  blogDetails: null,
+  blogDetails: {
+    id: "",
+    title: "",
+    image: "",
+    body: "",
+    publishedAt: "",
+    category: "",
+    isSponsored: false,
+  },
 
   filteredBlog: [],
 };
 
 //getSingleBlog
-export const getBlog = createAsyncThunk("blog/getBlog", async (id) => {
-  const res = await fetch(`http://localhost:3333/allBlogs/${id}`).then((data) =>
-    data.json()
-  );
-  return res;
+export const getBlog = createAsyncThunk("blog/getBlog", async (id: any) => {
+  try {
+    const res = await axios.get(`http://localhost:3333/allBlogs/${id}`);
+    console.log(res.data);
+    return res.data;
+  } catch (error: any | null) {
+    console.log(error);
+  }
 });
 
 //allBlogs
@@ -132,7 +151,7 @@ const blogSlice = createSlice({
     [getBlog.pending.type]: (state) => {
       state.loading = true;
     },
-    [getBlog.fulfilled.type]: (state, action: PayloadAction<Blog>) => {
+    [getBlog.fulfilled.type]: (state, action) => {
       state.loading = false;
       state.blogDetails = action.payload;
     },

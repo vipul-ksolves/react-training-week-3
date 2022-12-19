@@ -19,15 +19,11 @@ const Card = () => {
   let blogs = useAppSelector((state: RootState) => state.blog.allBlogs);
   let { loading } = useAppSelector((state: RootState) => state.blog);
 
-  // const afterDelete = useSelector((state) => state.blog.deleteBlog);
   const afterFilter = useAppSelector(
     (state: RootState) => state.blog.filteredBlog
   );
   console.log(blogs);
 
-  // if (afterDelete && afterDelete.length) {
-  //   blogs = afterDelete;
-  // }
   if (afterFilter && afterFilter.length) {
     blogs = afterFilter;
   }
