@@ -1,0 +1,49 @@
+{
+  "allBlogs": [
+    {
+      "id": 1,
+      "title": "Why clean design creates better experiences",
+      "image": "https://focus-theme.netlify.app/assets/img/pencils.jpg",
+      "body": "This is a sample intro paragraph and can be used to introduce readers to your article. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "publishedAt": "2022-04-12T00:38:51.947Z",
+      "category": "travel",
+      "isSponsored": true
+    },
+    {
+      "id": 3,
+      "title": "How to take better photos with your Canon DSLR",
+      "image": "https://focus-theme.netlify.app/assets/img/camera.jpg",
+      "body": "This is a sample intro paragraph and can be used to introduce readers to your article. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "publishedAt": "2022-07-22T00:38:51.947Z",
+      "category": "history",
+      "isSponsored": true
+    },
+    {
+      "id": 4,
+      "title": "The world's 11 greatest modern buildings",
+      "image": "https://focus-theme.netlify.app/assets/img/building.jpg",
+      "body": "This is a sample intro paragraph and can be used to introduce readers to your article. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "publishedAt": "2022-04-12T00:38:51.947Z",
+      "category": "travel",
+      "isSponsored": true
+    },
+    {
+      "id": 401.48260924112077,
+      "title": "aaaaaaaaaaa",
+      "image": "https://media.istockphoto.com/id/539001564/photo/rajwada-palace-indore.jpg?s=612x612&w=0&k=20&c=ihbWY77GKzZXNmYfvz3dUDpZissBxxcrfSDSMSqa548=",
+      "body": "vvvvdfvfdvfdv",
+      "publishedAt": "2022-12-14T11:12:04.903Z",
+      "category": "History",
+      "isSponsored": "True"
+    },
+    {
+      "id": 139.22765383352754,
+      "title": "ppppppppppppppppppppp",
+      "image": "https://media.istockphoto.com/id/539001564/photo/rajwada-palace-indore.jpg?s=612x612&w=0&k=20&c=ihbWY77GKzZXNmYfvz3dUDpZissBxxcrfSDSMSqa548=",
+      "body": "cscsdcsdvsd",
+      "publishedAt": "2022-12-14T11:16:03.692Z",
+      "category": "History",
+      "isSponsored": "True"
+    }
+  ]
+}
